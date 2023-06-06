@@ -18,15 +18,13 @@
     justify-content: center;
 }
 
-.scopes{
+.gameButtonWrapper{
     width: 100%;
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
 
-.scope{
-    border: 1px solid black;
-    width: 70px;
-    height: 70px;
+.gameButton{
+    font-size: 24px;
 }

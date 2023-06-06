@@ -1,16 +1,26 @@
 import "./game.css";
 import goblinImg from "./img/goblin.png";
 
+
 export class Game {
   constructor(gameField) {
     this.gameField = gameField;
-    this.scopesFiels = gameField.querySelector('.scopes')
+    this.goodPoints = 0;
+    this.badPoints = -1;
+    this.gameStart = false;
     this.columns = this.gameField.querySelectorAll(".fieldColumn");
     this.column;
     this.cell;
     this.img = document.createElement("img");
     this.img.src = goblinImg;
     this.intervalID;
+  }
+
+  deleteLast() {
+    this.columns[this.column]
+      .querySelectorAll(".fieldCell")
+      [this.cell].querySelector("img")
+      .remove();
   }
 
   newPosition() {
@@ -33,22 +43,37 @@ export class Game {
   clickListener() {
     this.img.addEventListener('click', () => {
       clearInterval(this.intervalID);
-      this.changePosition();
+      this.goodPoints++
+      this.changePosition(true);
     })
   }
 
-  changePosition() {
-     this.intervalID = setInterval(function wrapper(){
-       this.newPosition()
-       return wrapper
-     }.bind(this)().bind(this), 1000)
+  changePosition(isClick) {
+    if (this.gameStart){
+      this.intervalID = setInterval(function wrapper() {
+        if (!isClick) {
+          this.badPoints++
+        }
+        if (this.badPoints === 5){
+          alert(`Набрано очков: ${this.goodPoints}`)
+          clearInterval(this.intervalID)
+          this.gameStart = false
+        }
+        isClick = false;
+        this.newPosition();
+        if (!this.gameStart){
+          this.deleteLast()
+        }
+        return wrapper
+      }.bind(this)().bind(this), 1000)
+    }
   }
 
-
-
-
   start() {
-    this.changePosition()
+    this.goodPoints = 0;
+    this.badPoints = -1;
+    this.gameStart = true;
+    this.changePosition(false)
     this.clickListener()
   }
 }
