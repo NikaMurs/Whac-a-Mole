@@ -1,4 +1,4 @@
-# dom
-
-![CI](https://github.com/NikaMurs/dom/actions/workflows/web.yml/badge.svg)
+# events
+Ссылка - https://nikamurs.github.io/events/
+![CI](https://github.com/NikaMurs/events/actions/workflows/web.yml/badge.svg)
 
