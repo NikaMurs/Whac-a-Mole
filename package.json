@@ -39,5 +39,6 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.15.0",
     "webpack-merge": "^5.9.0"
-  }
+  },
+  "repository": "https://github.com/NikaMurs/events.git"
 }
