@@ -1,0 +1,32 @@
+.game{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.field{
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px solid black;
+}
+
+.fieldCell{
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.scopes{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.scope{
+    border: 1px solid black;
+    width: 70px;
+    height: 70px;
+}
