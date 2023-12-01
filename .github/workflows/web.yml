@@ -1,4 +1,4 @@
-name: Netology AHJ
+name: Whac-a-Mole
 
 on: [push, pull_request]
 
